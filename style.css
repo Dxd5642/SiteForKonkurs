@@ -2,6 +2,13 @@
 .frag_1_div_1{
     width: 100%;
     height: 1024px;
+    background-color: rgb(220, 220, 220);
+}
+.frag_1_reverse_time{
+    align-items: center;
+}
+.frag_1_reverse_time_div_time{
+
 }
 .frag_1_reverse_time_text{
     width: 449px;
@@ -28,8 +35,63 @@
     flex-grow: 0;
 
 }
+.frag_1_reverse_time_div_time_text_days ,.frag_1_reverse_time_div_time_text_hours, .frag_1_reverse_time_div_time_text_minuts, .frag_1_reverse_time_div_time_text_secs{
+    /* 176 */
+
+width: 61px;
+height: 48px;
+
+font-family: 'Playfair';
+font-style: normal;
+font-weight: 800;
+font-size: 48px;
+line-height: 100%;
+/* identical to box height, or 48px */
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.5px;
+
+color: #ED1C24;
 
 
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+}
+.frag_1_reverse_time_div_time_text_down{
+    /* Дней */
+
+width: 61px;
+height: 24px;
+
+font-family: 'Playfair';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 100%;
+/* identical to box height, or 24px */
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.5px;
+
+color: #3E1A16;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+}
+.frag_1_reverse_time_div_time_div_withTimeText{
+align-items: center;
+}
 /* ---------Илья конец---------- */
 
 
