@@ -1,0 +1,41 @@
+/* ---------Илья---------- */
+.frag_1_div_1{
+    width: 100%;
+    height: 1024px;
+}
+.frag_1_reverse_time_text{
+    width: 449px;
+    height: 32px;
+
+    font-family: 'Playfair';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 100%;
+    /* identical to box height, or 32px */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.5px;
+
+    color: #FBBF24;
+
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+
+}
+
+
+/* ---------Илья конец---------- */
+
+
+
+
+
+
+/* ---------Дима---------- */
+/* ---------Дима конец---------- */
