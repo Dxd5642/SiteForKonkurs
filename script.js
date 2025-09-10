@@ -40,3 +40,34 @@ function updateCountdown() {
         
 updateCountdown();
 setInterval(updateCountdown, 1000);
+
+
+const scrollContainer = document.getElementById('horizontalScroll');
+
+scrollContainer.addEventListener('wheel', (event) => {
+  // Проверяем, что курсор над контейнером
+  if (event.target.closest('.gallery-container')) {
+    event.preventDefault();
+    
+    // Настройка скорости скролла (можно регулировать)
+    const scrollSpeed = 2;
+    scrollContainer.scrollLeft += event.deltaY * scrollSpeed;
+  }
+});
+
+// Добавляем визуальную обратную связь
+scrollContainer.addEventListener('mouseenter', () => {
+  scrollContainer.style.cursor = 'grab';
+});
+
+scrollContainer.addEventListener('mousedown', () => {
+  scrollContainer.style.cursor = 'grabbing';
+});
+
+scrollContainer.addEventListener('mouseup', () => {
+  scrollContainer.style.cursor = 'grab';
+});
+
+scrollContainer.addEventListener('mouseleave', () => {
+  scrollContainer.style.cursor = 'default';
+});
