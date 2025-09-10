@@ -42,37 +42,24 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 
 
-const scrollContainer = document.getElementById('horizontalScroll');
-
-scrollContainer.addEventListener('wheel', (event) => {
-  // Проверяем, что курсор над контейнером
-  if (event.target.closest('.gallery-container')) {
-    event.preventDefault();
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollContainer = document.getElementById('horizontalScroll');
     
-    // Настройка скорости скролла (можно регулировать)
-    const scrollSpeed = 2;
-    scrollContainer.scrollLeft += event.deltaY * scrollSpeed;
-  }
+    if (!scrollContainer) return;
+    
+    scrollContainer.addEventListener('wheel', (event) => {
+        // Проверяем, поддерживает ли устройство горизонтальную прокрутку
+        const canScrollHorizontally = 
+            scrollContainer.scrollWidth > scrollContainer.clientWidth;
+        
+        if (canScrollHorizontally && Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
+            // Если вертикального скролла больше - это likely колесо мыши
+            event.preventDefault();
+            scrollContainer.scrollLeft += event.deltaY * 2;
+        }
+        // В противном случае позволяем стандартное поведение (тачпад)
+    });
 });
-
-// Добавляем визуальную обратную связь
-scrollContainer.addEventListener('mouseenter', () => {
-  scrollContainer.style.cursor = 'grab';
-});
-
-scrollContainer.addEventListener('mousedown', () => {
-  scrollContainer.style.cursor = 'grabbing';
-});
-
-scrollContainer.addEventListener('mouseup', () => {
-  scrollContainer.style.cursor = 'grab';
-});
-
-scrollContainer.addEventListener('mouseleave', () => {
-  scrollContainer.style.cursor = 'default';
-});
-
-
 
 
 // Универсальные функции
