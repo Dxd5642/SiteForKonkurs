@@ -71,3 +71,41 @@ scrollContainer.addEventListener('mouseup', () => {
 scrollContainer.addEventListener('mouseleave', () => {
   scrollContainer.style.cursor = 'default';
 });
+
+
+
+
+// Универсальные функции
+function openModal(modalId) {
+  const modal = document.getElementById(modalId);
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(modalId) {
+  const modal = document.getElementById(modalId);
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function closeAllModals() {
+  document.querySelectorAll('.modal-overlay').forEach(modal => {
+    modal.classList.remove('active');
+  });
+}
+// Закрытие по клику на фон
+document.querySelector('.modal-overlay').addEventListener('click', function(e) {
+  if (e.target === this) {
+    closeAllModals;
+  }
+});
+
+// Закрытие по клавише Escape
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeModal();
+  }
+});
+
+
+

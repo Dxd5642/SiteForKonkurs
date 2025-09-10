@@ -138,29 +138,302 @@
         <p class="frag_3_div_text_1">Истории героев Бессмертного полка</p>
         <p class="frag_3_div_text_2">Каждая фотография — это история о подвиге, мужестве и любви к Родине</p>
     </div>
-    <div class="gallery-container" id="horizontalScroll">
-    <div class="frag3_div_2">
-        <div class="frag3_div_2_hero_1">
-            <img src="images/heroes/Sysoev.png" alt="Сысоев А.М." class="frag3_div_2_hero_img"><p class="frag3_div_2_hero_famaly">Сысоев</p><p class="frag3_div_2_hero_name">Александр Макарович</p><button class="frag3_div_2_hero_btn">Подробнее</button>
+        <div class="gallery-container" id="horizontalScroll">
+        <div class="frag3_div_2">
+            <div class="frag3_div_2_hero_1">
+                <img src="images/heroes/Sysoev.png" alt="Сысоев А.М." class="frag3_div_2_hero_img"><p class="frag3_div_2_hero_famaly">Сысоев</p><p class="frag3_div_2_hero_name">Александр Макарович</p><button class="frag3_div_2_hero_btn" id="frag3_div_2_hero_btn_1" onclick="openModal('modal1')">Подробнее</button>
+            </div>
+            <div class="frag3_div_2_hero_2">
+                <img src="images/heroes/Bogdanov.png" alt="Богданов С.И." class="frag3_div_2_hero_img"><p class="frag3_div_2_hero_famaly">Богданов</p><p class="frag3_div_2_hero_name">Семён Иванович</p><button class="frag3_div_2_hero_btn" id="frag3_div_2_hero_btn_2" onclick="openModal('modal2')">Подробнее</button>
+            </div>
+            <div class="frag3_div_2_hero_3">
+                <img src="images/heroes/Yakovlev.png" alt="Яковлев В.Е." class="frag3_div_2_hero_img"><p class="frag3_div_2_hero_famaly">Яковлев</p><p class="frag3_div_2_hero_name">Василий Ефимович</p><button class="frag3_div_2_hero_btn" id="frag3_div_2_hero_btn_3" onclick="openModal('modal3')">Подробнее</button>
+            </div>
+            <div class="frag3_div_2_hero_4">
+                <img src="images/heroes/Bizin.png" alt="Бизин И.М." class="frag3_div_2_hero_img"><p class="frag3_div_2_hero_famaly">Бизин</p><p class="frag3_div_2_hero_name">Иван Михайлович</p><button class="frag3_div_2_hero_btn" id="frag3_div_2_hero_btn_4" onclick="openModal('modal4')">Подробнее</button>
+            </div>
+            <div class="frag3_div_2_hero_5">
+                <img src="images/heroes/Poluyanov.png" alt="Полуянов В.А." class="frag3_div_2_hero_img"><p class="frag3_div_2_hero_famaly">Полуянов</p><p class="frag3_div_2_hero_name">Василий Александрович</p><button class="frag3_div_2_hero_btn" id="frag3_div_2_hero_btn_5" onclick="openModal('modal5')">Подробнее</button>
+            </div>
         </div>
-        <div class="frag3_div_2_hero_2">
-            <img src="images/heroes/Bogdanov.png" alt="Богданов С.И." class="frag3_div_2_hero_img"><p class="frag3_div_2_hero_famaly">Богданов</p><p class="frag3_div_2_hero_name">Семён Иванович</p><button class="frag3_div_2_hero_btn">Подробнее</button>
         </div>
-        <div class="frag3_div_2_hero_3">
-            <img src="images/heroes/Yakovlev.png" alt="Яковлев В.Е." class="frag3_div_2_hero_img"><p class="frag3_div_2_hero_famaly">Яковлев</p><p class="frag3_div_2_hero_name">Василий Ефимович</p><button class="frag3_div_2_hero_btn">Подробнее</button>
-        </div>
-        <div class="frag3_div_2_hero_4">
-            <img src="images/heroes/Bizin.png" alt="Бизин И.М." class="frag3_div_2_hero_img"><p class="frag3_div_2_hero_famaly">Бизин</p><p class="frag3_div_2_hero_name">Иван Михайлович</p><button class="frag3_div_2_hero_btn">Подробнее</button>
-        </div>
-        <div class="frag3_div_2_hero_5">
-            <img src="images/heroes/Poluyanov.png" alt="Полуянов В.А." class="frag3_div_2_hero_img"><p class="frag3_div_2_hero_famaly">Полуянов</p><p class="frag3_div_2_hero_name">Василий Александрович</p><button class="frag3_div_2_hero_btn">Подробнее</button>
+</div>
+
+
+<div class="modal-overlay" id="modal1">
+    <div class="modal-content">
+        <button class="close-modal-btn" onclick="closeModal('modal1')">✕</button>
+        <div class="modal-body">
+            <div class="modal_top">
+                <div class="modal_logo"><img src="images/Лебеди.png" alt="Лебеди" class="modal_logo">
+                </div>
+                <div class="modal_top_text">
+                    <div>
+                    <p class="modal_top_text_famaly">Сысоев</p><p class="modal_top_text_name">Александр Макарович</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal_body">
+                <img src="images/heroes/Sysoev.png" alt="Сысоев Александр Макарович" class="modal_body_img">
+                <div class="model_body_text">
+                    <p class="model_body_text_zagolovok">История</p>
+                    <p class="model_body_text_simple">Призван по мобилизации во время Великой Отечественной войны в 1941 году. Воевал всю войну на Восточном фронте с Японией. После демобилизации работал в колхозе, совхозе. Прожил в Пеганово до 1985 года. Похоронен в Пеганово.</p>
+                    <p class="model_body_text_zagolovok">Награждён</p>
+                    <p class="model_body_text_simple">Орденом Отечественной войны 2 степени, медалью за Победу над Японией, памятными юбилейными медалями.</p>
+                </div>
+            </div>
         </div>
     </div>
+</div>
+
+<div class="modal-overlay" id="modal2">
+    <div class="modal-content">
+        <button class="close-modal-btn" onclick="closeModal('modal2')">✕</button>
+        <div class="modal-body">
+            <div class="modal_top">
+                <div class="modal_logo"><img src="images/Лебеди.png" alt="Лебеди" class="modal_logo">
+                </div>
+                <div class="modal_top_text">
+                    <div>
+                    <p class="modal_top_text_famaly">Богданов</p><p class="modal_top_text_name">Сёмен Иванович</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal_body">
+                <img src="images/heroes/Bogdanov.png" alt="Богданов Сёмен Иванович" class="modal_body_img">
+                <div class="model_body_text">
+                    <p class="model_body_text_zagolovok">История</p>
+                    <p class="model_body_text_simple">Призван по мобилизации во время Великой Отечественной войны в 1941 году. Воевал всю войну на Восточном фронте с Японией. После демобилизации работал в колхозе, совхозе. Прожил в Пеганово до 1985 года. Похоронен в Пеганово.</p>
+                    <p class="model_body_text_zagolovok">Награждён</p>
+                    <p class="model_body_text_simple">Орденом Отечественной войны 2 степени, медалью за Победу над Японией, памятными юбилейными медалями.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal-overlay" id="modal3">
+    <div class="modal-content">
+        <button class="close-modal-btn" onclick="closeModal('modal3')">✕</button>
+        <div class="modal-body">
+            <div class="modal_top">
+                <div class="modal_logo"><img src="images/Лебеди.png" alt="Лебеди" class="modal_logo">
+                </div>
+                <div class="modal_top_text">
+                    <div>
+                    <p class="modal_top_text_famaly">Яковлев</p><p class="modal_top_text_name">Василий Ефимович</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal_body">
+                <img src="images/heroes/Yakovlev.png" alt="Яковлев Василий Ефимович" class="modal_body_img">
+                <div class="model_body_text">
+                    <p class="model_body_text_zagolovok">История</p>
+                    <p class="model_body_text_simple">Ушёл на фронт в 1941 году. Попал в лыжный батальон. В боях был ранен. В 1943 году попал в плен, где смог выжить в нечеловеческих условиях. После войны проходил срочную службу 3 года. Пришел в родное село в 1948 году. Жил и работал в родном селе в сельском хозяйстве. Прожил в Пеганово до 1996 года. Похоронен в Пеганово.</p>
+                    <p class="model_body_text_zagolovok">Награждён</p>
+                    <p class="model_body_text_simple">Орденом Отечественной войны 2 степени, Памятными медалями.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal-overlay" id="modal4">
+    <div class="modal-content">
+        <button class="close-modal-btn" onclick="closeModal('modal4')">✕</button>
+        <div class="modal-body">
+            <div class="modal_top">
+                <div class="modal_logo"><img src="images/Лебеди.png" alt="Лебеди" class="modal_logo">
+                </div>
+                <div class="modal_top_text">
+                    <div>
+                    <p class="modal_top_text_famaly">Бизин</p><p class="modal_top_text_name">Иван Михайлович</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal_body">
+                <img src="images/heroes/Bizin.png" alt="Бизин Иван Михайлович" class="modal_body_img">
+                <div class="model_body_text">
+                    <p class="model_body_text_zagolovok">История</p>
+                    <p class="model_body_text_simple">Призван по мобилизации во время Великой Отечественной войны 28.07.1941 
+Участвовал в боях с японскими захватчиками в Манчжурии,принимал участие в боях за освобождение Южного Сахалина
+Демобилизован из армии 26.07.1946
+Работал в колхозе "Советская Сибирь". Воспитал троих детей.Всю свою жизнь прожил в с.Бизино Тобольского района до 1990 года. В  феврале 1990 года захоронен на Ворогушинском кладбище.</p>
+                    <p class="model_body_text_zagolovok">Награждён</p>
+                    <p class="model_body_text_simple">Орденом Отечественной войны 2 степени
+Медалью "За победу над Японией"
+Медалью "За победу над Германией"
+Боевой справкой Верховного Главнокомандующего Генералиссимуса Советского Союза И.В.Сталина за отличные боевые действия в боях за освобождение от японских захватчиков Маньчжурии и Южного Сахалина.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal-overlay" id="modal5">
+    <div class="modal-content">
+        <button class="close-modal-btn" onclick="closeModal('modal5')">✕</button>
+        <div class="modal-body">
+            <div class="modal_top">
+                <div class="modal_logo"><img src="images/Лебеди.png" alt="Лебеди" class="modal_logo">
+                </div>
+                <div class="modal_top_text">
+                    <div>
+                    <p class="modal_top_text_famaly">Полуянов</p><p class="modal_top_text_name">Василий Александрович</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal_body">
+                <img src="images/heroes/Poluyanov.png" alt="Полуянов Василий Александрович" class="modal_body_img">
+                <div class="model_body_text">
+                    <p class="model_body_text_zagolovok">История</p>
+                    <p class="model_body_text_simple">Призван по мобилизации в июне 1941 года Тобольским РВК
+Красноармеец, комсомолец
+воевал под Ленинградом Волховстрой
+28.10.1941 года пропал без вести
+Ленинградская область Киришский район д. Бор
+Попал в плен  в концлагерь Шталаг 11А √120904
+Умер 25.08.1941 в лагере Берген-Бельсен</p>
+                    
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 
 
+
+
+
+
+
+<div class="footer_body">
+<div class="footer_container">
+
+        <div class="footer_1_floor">
+
+            <div class="footer_1_floor_container">
+                
+                <img class="lebedi_footer" src="images/Лебеди.png" alt="lebedi_footer">
+
+                <div class="text_footer_container">
+
+                    <p class="text_footer_1_1">
+                        Возьми историю в свои руки
+                    </p>
+
+                    <p class="text_footer_1_2">
+                        Пронеси память через годы
+                    <p>
+                        
+                </div>
+            </div>
+        </div>
+
+        <div class="footer_2_floor">
+
+            <div class="footer_2_1_container">
+
+                <img class="footer_photos" src="images/Arefiev.png" alt="Arefiev">
+
+                <div class="footer_2_1_1_container">
+                    
+                    <div class="text_footer_2_1">
+
+                        <p class="text_footer_2_1_1">
+                            Арефьев
+                        </p>
+                        
+                        <p class="text_footer_2_1_2">
+                            Евгений Алексеевич
+                        </p>
+                    </div>
+
+                    <div class="text_footer_2_2">
+                        
+                        <p class="text_footer_2_2_1">
+                            Руководитель проекта  |  Разработка дизайна
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer_2_1_container">
+
+                <img class="footer_photos" src="images/Ilya.png" alt="Arefiev">
+
+                <div class="footer_2_1_1_container">
+                    
+                    <div class="text_footer_2_1">
+
+                        <p class="text_footer_2_1_1">
+                            Сысоев
+                        </p>
+                        
+                        <p class="text_footer_2_1_2">
+                            Илья
+                        </p>
+                    </div>
+
+                    <div class="text_footer_2_2">
+                        
+                        <p class="text_footer_2_2_1">
+                            Участник проекта  |  Разработка сайта 
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer_2_1_container">
+
+                <img class="footer_photos" src="images/Dmitry.png" alt="Arefiev">
+
+                <div class="footer_2_1_1_container">
+                    
+                    <div class="text_footer_2_1">
+
+                        <p class="text_footer_2_1_1">
+                            Антонов
+                        </p>
+                        
+                        <p class="text_footer_2_1_2">
+                            Дмитрий
+                        </p>
+                    </div>
+
+                    <div class="text_footer_2_2">
+                        
+                        <p class="text_footer_2_2_1">
+                            Участник проекта  |  Разработка сайта
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer_3_floor">
+
+            <div class="footer_3_1">
+
+                <div class="footer_3_2">
+
+                    <img class="byprorokk" src="images/byprorokk.png" alt="2025 byprorokk">
+
+                    <img class="byprorokk2" src="images/byprorokk2.png" alt="byprorokk">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
 
 
 
