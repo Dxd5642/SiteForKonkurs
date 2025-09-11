@@ -10,7 +10,7 @@ body{
     display: flex;
     justify-content: center;
 }
-#background_video {
+#background_img {
   position: absolute;
   top: 0;
   left: 0;
