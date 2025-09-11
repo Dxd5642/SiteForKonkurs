@@ -96,3 +96,70 @@ document.addEventListener('keydown', function(e) {
 
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    const menuItems = document.querySelectorAll('.nav-menu > div');
+    const sections = document.querySelectorAll('section');
+    
+    // Обработчик клика по пунктам меню
+    menuItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('data-target');
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                // Плавная прокрутка к секции
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                
+                // Убираем активный класс у всех пунктов
+                menuItems.forEach(menuItem => {
+                    menuItem.classList.remove('active');
+                });
+                
+                // Добавляем активный класс к текущему пункту
+                this.classList.add('active');
+            }
+        });
+    });
+    
+    // Отслеживание скролла для подсветки активного пункта
+    window.addEventListener('scroll', function() {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            
+            // Проверяем, какая секция сейчас в области видимости
+            if (window.pageYOffset >= (sectionTop - 100)) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        // Обновляем активный пункт меню
+        menuItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('data-target') === current) {
+                item.classList.add('active');
+            }
+        });
+    });
+    
+    // Плавная прокрутка для якорных ссылок
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+});
