@@ -95,7 +95,6 @@ document.addEventListener('keydown', function(e) {
 });
 
 
-
 document.addEventListener('DOMContentLoaded', function() {
     const menuItems = document.querySelectorAll('.nav-menu > div');
     const sections = document.querySelectorAll('section');
@@ -127,32 +126,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Отслеживание скролла для подсветки активного пункта
-        window.addEventListener('scroll', function() {
-    let current = '';
-    const scrollPosition = window.pageYOffset;
-    const windowHeight = window.innerHeight;
-    const documentHeight = document.documentElement.scrollHeight;
-    
-    sections.forEach((section, index) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
+    window.addEventListener('scroll', function() {
+        let current = '';
         
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            
             // Проверяем, какая секция сейчас в области видимости
-            if (scrollPosition >= (sectionTop - 100)) {
+            if (window.pageYOffset >= (sectionTop - 100)) {
                 current = section.getAttribute('id');
             }
-            
-            // Принудительно активируем последнюю секцию при прокрутке к низу страницы
-            if (index === sections.length - 1) {
-                const scrollBottom = scrollPosition + windowHeight;
-                const pageBottom = documentHeight - 100; // Небольшой отступ от низа
-                
-                if (scrollBottom >= pageBottom) {
-                    current = section.getAttribute('id');
-                }
-            }
         });
-    
+        
         // Обновляем активный пункт меню
         menuItems.forEach(item => {
             item.classList.remove('active');
@@ -161,8 +147,22 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-
+    
+    // Плавная прокрутка для якорных ссылок
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
 });
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const header = document.querySelector('.header');
@@ -202,4 +202,33 @@ window.addEventListener('scroll', function() {
     
     // Двигаем фон медленнее, чем основной контент
     backgroundImg.style.transform = `translateY(${scrolled * -0.2}px)`;
+});
+
+
+// ---------------------------------
+document.addEventListener('DOMContentLoaded', function() {
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    
+    function checkScroll() {
+        animatedElements.forEach(element => {
+            const elementRect = element.getBoundingClientRect();
+            const elementTop = elementRect.top;
+            const elementBottom = elementRect.bottom;
+            
+            // Элемент виден если его верхняя часть выше низа экрана 
+            // и нижняя часть ниже верха экрана
+            const isVisible = elementTop < window.innerHeight && elementBottom > 40;
+            
+            if (isVisible) {
+                element.classList.add('animate-in');
+                element.classList.remove('animate-out');
+            } else {
+                element.classList.add('animate-out');
+                element.classList.remove('animate-in');
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', checkScroll);
+    checkScroll(); // Проверить при загрузке
 });
