@@ -163,3 +163,36 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const header = document.querySelector('.header');
+    const targetDiv = document.getElementById('special-section');
+    
+    window.addEventListener('scroll', function() {
+        const targetTop = targetDiv.offsetTop;
+        const targetHeight = targetDiv.offsetHeight;
+        const scrollPosition = window.pageYOffset;
+        const headerHeight = header.offsetHeight;
+        
+        // Позиция нижней границы меню относительно верха целевого div
+        const menuBottomInTarget = scrollPosition + headerHeight - targetTop;
+        
+        // Первые 25% дива - полностью прозрачный (opacity = 0)
+        // Следующие 75% - плавно становится непрозрачным (opacity от 0 до 1)
+        let opacity = 0;
+        
+        if (menuBottomInTarget > targetHeight * 0.25) {
+            // Вычисляем прогресс после первых 25%
+            const progress = (menuBottomInTarget - targetHeight * 0.25) / (targetHeight * 0.75);
+            opacity = Math.max(0, Math.min(1, progress)); // Ограничиваем от 0 до 1
+        }
+        
+        header.style.backgroundColor = `rgba(255, 255, 255, ${opacity})`;
+        // header.style.backdropFilter = `blur(${5 * (1 - opacity)}px)`;
+    });
+});
+
+
+
+// ----------------------------------------------------------------------------------
+// Параллакс эффект для фонового изображения
