@@ -196,3 +196,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ----------------------------------------------------------------------------------
 // Параллакс эффект для фонового изображения
+// Параллакс эффект для фонового изображения
+window.addEventListener('scroll', function() {
+    const backgroundImg = document.getElementById('background_img');
+    const scrolled = window.pageYOffset;
+    
+    // Двигаем фон медленнее, чем основной контент
+    backgroundImg.style.transform = `translateY(-${scrolled * 0.2}px)`;
+});
