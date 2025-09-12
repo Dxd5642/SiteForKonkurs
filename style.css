@@ -35,13 +35,15 @@ body{
 .frag_1_div_1_0, .frag_1_div_1_1, .frag_1_div_1_2{
     width: 33.3%;
     height: 100%;
+    display: flex;
+    align-items: end;
 } 
 
 .frag_1_div_1_2_block{
     height: 220px;
     width: 100%;
-    position: absolute;
-    bottom: 4vh;
+    /* position: absolute; */
+    bottom: 3vh;
     background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(7px)
 
@@ -72,7 +74,7 @@ height: 240px;
     background-color: #FFFFFF;
     width: 33.3%;
     height: 220px;
-    bottom: 4vh;
+    bottom: 5vh;
     position: absolute;
 }
 .frag_1_reverse_time_text{
