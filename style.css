@@ -1356,6 +1356,7 @@ body{
 
 .frag2_body {
     height: auto;
+    padding-bottom: 170%;
 }
 
 .frag_2_div_5_photo {
@@ -1477,6 +1478,30 @@ body{
 
 .footer_3_floor {
     height: 300px;
+}
+
+.modal-content{
+    height: auto;
+    width: 90%;
+}
+.modal_body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.model_body_text{
+    width: 90%;
+    height: auto;
+    margin: 0px;
+    margin-top: 15px;
+    
+}
+
+.model_body_text_simple, .model_body_text_zagolovok{
+white-space: pre-line;
+width: 90%;
 }
 
 }
