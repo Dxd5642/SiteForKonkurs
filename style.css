@@ -1142,7 +1142,7 @@ section{
     * {
         box-sizing: border-box; /* Важно для правильного расчета размеров */
     }
-}
+
 
 body{
     width: 100%;
@@ -1298,10 +1298,16 @@ body{
 .header {
     position: inherit;
 }
-
+#id_heroes{
+    margin: 0px;
+}
+.div2-3{
+    height: auto;
+}
 .frag_2_div_1 {
     width: 92.3%;
     height: 100vh;
+    padding: 10px;
 }
 
 .frag_2_div_3_container {
@@ -1310,12 +1316,13 @@ body{
 }
 
 .frag_2_text_1 {
-    font-size: 36px;
-
+    font-size: 250%;
+    white-space: pre-line;
+    
 }
 
 .frag_2_text_2 {
-    font-size: 22px;
+    font-size: 140%;
 }
 
 .frag_2_div_3_container {
@@ -1326,10 +1333,13 @@ body{
     height: 83px;
     width: 83px;
     margin-bottom: 5%;
+    margin-top: 10%;
 }
 
 .frag_2_div_4 {
     width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .frag_2_div_4_1_container {
@@ -1350,11 +1360,12 @@ body{
 
 .frag_2_div_5_photo {
     width: 100%;
+    padding: 5px;
    
 }
 
 .animate-on-scroll, .animate-scale, .animate-in {
-    margin-bottom: 110%;
+    /* margin-bottom: 110%; */
 }
 
 .zaglushka {
@@ -1367,17 +1378,42 @@ body{
 }
 
 .frag_3_div_text_2 {
-    font-size: 22px;
+    font-size: 150%;
+    white-space: pre-line;
+    padding-left: 10%;
+    padding-right: 10%;
+
 }
 
-.frag3_div_2 {
+.gallery-container{
+    align-items: center;
+    justify-content: center;
     display: flex;
     flex-direction: column;
+}
+.frag3_div_2 {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: auto;
+}
+.frag3_div_btn_addselfhero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+}
+.button2{
+    width: 100%;
 }
 
 .frag_3_div_1 {
     height: 100%;
+    align-items: center;
+    justify-content: center;
 }
 
 .frag3_div_2_hero_1, .frag3_div_2_hero_2, .frag3_div_2_hero_3, .frag3_div_2_hero_4, .frag3_div_2_hero_5 {
