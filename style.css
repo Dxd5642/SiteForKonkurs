@@ -873,9 +873,9 @@ color: #4A4A4A;
 .footer_2_1_1_container {
     display: flex;
     flex-direction: column;
-    height: 96px;
-    width: 192px;
-    margin-top: 54px;
+    height: auto;
+    width: auto;
+    margin-top: auto;
 }
 
 .footer_photos {
@@ -883,12 +883,12 @@ color: #4A4A4A;
 }
 
 .text_footer_2_1 {
-    height: 44px;
+    height: auto;
 }
 
 .text_footer_2_1_1 {
 
-    height: 24px;
+    height: auto;
 
     text-align: left;
     font-family: "Playfair", serif;
@@ -901,7 +901,7 @@ color: #4A4A4A;
 
 .text_footer_2_1_2 {
 
-    height: 20px;
+    height: auto;
 
     font-family: "Playfair", serif;
     font-weight: 500;
