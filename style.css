@@ -45,10 +45,10 @@ body{
     /* position: absolute; */
     bottom: 3vh;
     background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(7px)
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
 
 } 
-
 
 
 .frag_1_div_1_1{
