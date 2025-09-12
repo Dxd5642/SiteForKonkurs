@@ -1188,8 +1188,13 @@ body{
 .frag_1_div_1_0{
     /* height: auto; */
 }
+.frag_1_div_1_2{
+    height: 10vh;
+}
 .frag_1_reverse_time{
     width: 100%;
+    position: unset;
+
 }
 .frag_1_div_1{
     display: flex;
