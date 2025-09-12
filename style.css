@@ -6,7 +6,7 @@ body{
 }
 .frag_1_div_1{
     width: 100%;
-    height: 100vh;
+    height: 95vh;
     display: flex;
     margin: 0px;
     padding: 0px;
@@ -57,7 +57,7 @@ height: 240px;
     background-color: #FFFFFF;
     width: 577px;
     height: 220px;
-    bottom: 0px;
+    bottom: 4vh;
     position: absolute;
 }
 .frag_1_reverse_time_text{
@@ -311,7 +311,7 @@ color: #3E1A16;
 
 
 .frag_3_div_1{
-    width: 85.4%;;
+    width: 100%;
     height: 950px;
     background-color: white;
     display: flex;
@@ -510,28 +510,9 @@ border: 1px solid #991B1B;
 .gallery-container::-webkit-scrollbar {
   width: 16px;
   height: 16px;
+  visibility: hidden;
 }
 
-.gallery-container::-webkit-scrollbar-track {
-  background: linear-gradient(135deg, #F59E0B 0%, #F59E0B 100%);
-  border-radius: 10px;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
-}
-
-.gallery-container::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #991B1B, #991B1B);
-  border-radius: 10px;
-  border: 3px solid #f1f1f1;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.gallery-container::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, #ce2222, #991B1B);
-}
-
-.gallery-container::-webkit-scrollbar-corner {
-  background: transparent;
-}
 
 
 
@@ -644,8 +625,8 @@ color: #000000;
   position: absolute;
   top: 27px;
   right: 20px;
-  background: rgb(231, 215, 223);
   color: rgb(153, 27, 27);
+  background-color: #FFFFFF;
   border: none;
   font-size: 25px;
   font-weight: 500;
@@ -665,6 +646,12 @@ color: #000000;
 .close-modal-btn:hover {
   background-color: rgb(153, 27, 27);
   color: rgb(231, 215, 223);
+}
+.close-modal-btn:active{
+  background: rgb(231, 215, 223);
+    color: rgb(153, 27, 27);
+
+
 }
 .modal_body{
     display: flex;
@@ -1036,13 +1023,6 @@ section{
 }
 
 /* Разные направления */
-.animate-left { transform: translateX(-100px); }
-.animate-left.animate-in { transform: translateX(0); }
-.animate-left.animate-out { transform: translateX(100px); }
-
-.animate-right { transform: translateX(100px); }
-.animate-right.animate-in { transform: translateX(0); }
-.animate-right.animate-out { transform: translateX(-100px); }
 
 .animate-scale { transform: scale(0.8) translateY(50px); }
 .animate-scale.animate-in { transform: scale(1) translateY(0); }
