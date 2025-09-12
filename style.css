@@ -1133,6 +1133,17 @@ section{
 /* Адаптация мобилки-----------------------Дима---------------------------- */
 @media screen and (max-width: 420px) {
 
+        html, body {
+        overflow-x: hidden;
+        width: 100%;
+        position: relative;
+    }
+    
+    * {
+        box-sizing: border-box; /* Важно для правильного расчета размеров */
+    }
+}
+
 body{
     width: 100%;
     display: flex;
@@ -1142,7 +1153,11 @@ body{
     justify-items: center;
     align-content: center;
     clip-path: inset(0 0 0 0);
+    overflow-x: hidden;
+    
+    
 }
+
 
 
 #background_img{
@@ -1150,6 +1165,7 @@ body{
     position: relative;
     height: 60vh;
     width: auto; */
+    
 }
 
 .frag_1_text_imortal{
@@ -1179,6 +1195,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: end;
+    position: relative;
 }
 /* До 9 мая */
 .frag_1_reverse_time_text{
