@@ -1129,3 +1129,231 @@ section{
 
 
 
+
+/* Адаптация мобилки-----------------------Дима---------------------------- */
+@media screen and (max-width: 420px) {
+
+.nav_item_aboutProject {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    height: 36px;
+
+    font-size: 15px;
+    text-align: center;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    margin: 0;
+    font-style: medium;
+}
+
+.nav_item_heroes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    height: 36px;
+
+    font-size: 15px;
+    text-align: center;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    margin: 0;
+    font-style: medium;
+}
+
+.nav_item_aboutWe {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    height: 36px;
+
+    font-size: 15px;
+    text-align: center;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    margin: 0;
+    font-style: medium;
+}
+
+.nav_item_contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    height: 36px;
+
+    font-size: 15px;
+    text-align: center;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    margin: 0;
+    font-style: medium;
+}
+    
+.nav-menu {
+    display: flex;
+    color: #3E1A16;
+    cursor: pointer;
+    
+}
+
+.header {
+    position: inherit;
+}
+
+.frag_2_div_1 {
+    width: 92.3%;
+    height: 100vh;
+}
+
+.frag_2_div_3_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.frag_2_text_1 {
+    font-size: 36px;
+
+}
+
+.frag_2_text_2 {
+    font-size: 22px;
+}
+
+.frag_2_div_3_container {
+    margin-top: 5%;
+}
+
+.lebedi {
+    height: 83px;
+    width: 83px;
+    margin-bottom: 5%;
+}
+
+.frag_2_div_4 {
+    width: 100%;
+}
+
+.frag_2_div_4_1_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+}
+
+.frag_2_div_4_1_participants, .frag_2_div_4_1_cities, .frag_2_div_4_1_histories {
+    width: 80%;
+    margin-bottom: 5%;
+}
+
+.frag2_body {
+    height: auto;
+}
+
+.frag_2_div_5_photo {
+    width: 100%;
+   
+}
+
+.animate-on-scroll, .animate-scale, .animate-in {
+    margin-top: 110%;
+}
+
+.zaglushka {
+    margin-bottom: 0;
+}
+
+.frag_3_div_text_1 {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.frag_3_div_text_2 {
+    font-size: 22px;
+}
+
+.frag3_div_2 {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+.frag_3_div_1 {
+    height: 100%;
+}
+
+.frag3_div_2_hero_1, .frag3_div_2_hero_2, .frag3_div_2_hero_3, .frag3_div_2_hero_4, .frag3_div_2_hero_5 {
+    margin-bottom: 5%;
+}
+
+.frag_3_div_text {
+    margin-bottom: 5%;
+}
+
+.footer_container {
+    height: auto;
+}
+
+.footer_1_floor_container {
+    width: 85%;
+    height: auto;
+}
+
+.text_footer_1_1 {
+    font-size: 36px;
+    margin-bottom: 3%;
+}
+
+.text_footer_1_2 {
+    font-size: 22px;
+}
+
+.footer_2_floor {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+
+}
+
+.footer_2_1_container {
+    width: 90%;
+    height: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.footer_photos {
+    height: 150px;
+    width: 150px;
+}
+
+.footer_3_1 {
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+    width: 75%;
+    justify-content: end;
+}
+
+.footer_3_2 {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer_3_floor {
+    height: 300px;
+}
+
+}
