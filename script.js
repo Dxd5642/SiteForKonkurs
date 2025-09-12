@@ -71,11 +71,11 @@ function openModal(modalId) {
     });
             
             // Обновляем активный пункт меню
-//  updateActiveMenuItem('heroes');
-    
-  const modal = document.getElementById(modalId);
-  modal.classList.add('active');
-  document.body.style.overflow = 'hidden';
+            
+            const modal = document.getElementById(modalId);
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            //  updateActiveMenuItem('heroes');
 
 }
 
@@ -83,6 +83,9 @@ function closeModal(modalId) {
   const modal = document.getElementById(modalId);
   modal.classList.remove('active');
   document.body.style.overflow = '';
+  document.querySelectorAll('.modal-overlay').forEach(modal => {
+    modal.classList.remove('active');});
+  
 }
 
 function closeAllModals() {
