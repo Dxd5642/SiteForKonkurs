@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
 const observerOptions = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.7 // 50% видимости секции
+    threshold: 0.3 // 50% видимости секции
 };
 
 const observer = new IntersectionObserver((entries) => {
