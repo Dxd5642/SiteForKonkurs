@@ -1316,7 +1316,7 @@ body{
 }
 
 .frag_2_text_1 {
-    font-size: 250%;
+    font-size: 230%;
     white-space: pre-line;
     
 }
@@ -1456,6 +1456,18 @@ body{
     margin-top: 10%;
     margin-bottom: 10%;
 }
+.footer_2_1_1_container{
+height: auto;
+width: auto;
+margin-top: auto;
+display: flex;
+flex-direction:column;
+
+}
+
+.text_footer_2_2, .text_footer_2_1, .text_footer_2_1_2{
+    height: auto;
+}
 
 .footer_photos {
     height: 150px;
@@ -1497,6 +1509,14 @@ body{
     margin: 0px;
     margin-top: 15px;
     
+}
+.modal_top_text_famaly{
+    white-space: pre-line;
+    width: auto;
+}
+.modal_top {
+    width: auto;
+    padding-right: 30px;
 }
 
 .model_body_text_simple, .model_body_text_zagolovok{

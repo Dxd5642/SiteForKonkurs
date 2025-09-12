@@ -62,13 +62,19 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+function isMobile() {
+    return window.matchMedia("(max-width: 768px)").matches && 
+           ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+}
+
 // Универсальные функции
 function openModal(modalId) {
+    if (!isMobile()){
     const targetSection = document.getElementById('heroes');
     targetSection.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
-    });
+    });}
             
             // Обновляем активный пункт меню
             
@@ -78,6 +84,8 @@ function openModal(modalId) {
             //  updateActiveMenuItem('heroes');
 
 }
+
+
 
 function closeModal(modalId) {
   const modal = document.getElementById(modalId);
