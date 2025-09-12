@@ -1180,6 +1180,20 @@ body{
     flex-direction: column;
     justify-content: end;
 }
+/* До 9 мая */
+.frag_1_reverse_time_text{
+    font-size: 160%;
+}
+/* Отщет */
+.frag_1_reverse_time_div_time{
+    gap: 10%;
+}
+.frag_1_reverse_time_div_time_text_days, .frag_1_reverse_time_div_time_text_hours, .frag_1_reverse_time_div_time_text_minuts, .frag_1_reverse_time_div_time_text_secs{
+    font-size: 250%;
+}
+.frag_1_reverse_time_div_time_text_down{
+    font-size: 120%;
+}
 
 
 
@@ -1255,6 +1269,7 @@ body{
     display: flex;
     color: #3E1A16;
     cursor: pointer;
+    padding: 0px;
     
 }
 
