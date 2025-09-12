@@ -64,9 +64,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Универсальные функции
 function openModal(modalId) {
+    const targetSection = document.getElementById('heroes');
+    targetSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+            
+            // Обновляем активный пункт меню
+//  updateActiveMenuItem('heroes');
+    
   const modal = document.getElementById(modalId);
   modal.classList.add('active');
   document.body.style.overflow = 'hidden';
+
 }
 
 function closeModal(modalId) {
@@ -94,6 +104,8 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
+
+    // Функция для плавной прокрутки к секции по ID
 
 document.addEventListener('DOMContentLoaded', function() {
     const menuItems = document.querySelectorAll('.nav-menu > div');
@@ -126,27 +138,34 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Отслеживание скролла для подсветки активного пункта
-    window.addEventListener('scroll', function() {
-        let current = '';
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
+    // Отслеживание скролла для подсветки активного пункта
+   // Замените обработчик скролла на этот код
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.7 // 50% видимости секции
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const current = entry.target.getAttribute('id');
             
-            // Проверяем, какая секция сейчас в области видимости
-            if (window.pageYOffset >= (sectionTop - 100)) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        // Обновляем активный пункт меню
-        menuItems.forEach(item => {
-            item.classList.remove('active');
-            if (item.getAttribute('data-target') === current) {
-                item.classList.add('active');
-            }
-        });
+            menuItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('data-target') === current) {
+                    item.classList.add('active');
+                }
+            });
+        }
     });
+}, observerOptions);
+
+// Наблюдаем за всеми секциями
+sections.forEach(section => {
+    observer.observe(section);
+});
+
     
     // Плавная прокрутка для якорных ссылок
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
