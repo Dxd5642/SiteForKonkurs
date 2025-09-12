@@ -13,7 +13,7 @@ body{
     /* flex-direction: column; */
     /* justify-content: center; */
     align-items: center;
-    clip-path: inset(0 0 0 0)
+    clip-path: inset(0 0 0 0);
 
 }
 #background_img{
@@ -1133,6 +1133,56 @@ section{
 /* Адаптация мобилки-----------------------Дима---------------------------- */
 @media screen and (max-width: 420px) {
 
+body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    clip-path: inset(0 0 0 0);
+}
+
+
+#background_img{
+    /* background-size: cover;
+    position: relative;
+    height: 60vh;
+    width: auto; */
+}
+
+.frag_1_text_imortal{
+    top: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+}
+.frag_1_text_imortal_img{
+    width: 85%;
+    height: auto;
+}
+
+.frag_1_div_1_0, .frag_1_div_1_1, .frag_1_div_1_2{
+    height: 25vh;
+    width: 100%;
+}
+.frag_1_div_1_0{
+    /* height: auto; */
+}
+.frag_1_reverse_time{
+    width: 100%;
+}
+.frag_1_div_1{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+
+
 .nav_item_aboutProject {
     display: flex;
     align-items: center;
@@ -1267,7 +1317,7 @@ section{
 }
 
 .animate-on-scroll, .animate-scale, .animate-in {
-    margin-top: 110%;
+    margin-bottom: 110%;
 }
 
 .zaglushka {
