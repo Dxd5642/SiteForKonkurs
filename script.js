@@ -60,52 +60,6 @@ function isMobile() {
            ('ontouchstart' in window || navigator.maxTouchPoints > 0);
 }
 
-function openModal(modalId) {
-    if (!isMobile()){
-        const targetSection = document.getElementById('heroes');
-        targetSection.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        })
-    ;}            
-    const modal = document.getElementById(modalId);
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    document.body.classList.add('no-scroll');
-    document.documentElement.classList.add('no-scroll');
-}
-
-
-function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-    document.querySelectorAll('.modal-overlay').forEach(modal => {
-    modal.classList.remove('active');});
-    document.body.classList.remove('no-scroll');
-    document.documentElement.classList.remove('no-scroll');
-}
-
-function closeAllModals() {
-    document.querySelectorAll('.modal-overlay').forEach(modal => {
-    modal.classList.remove('active');
-    document.body.classList.remove('no-scroll');
-    document.documentElement.classList.remove('no-scroll');
-  });
-}
-
-document.querySelector('.modal-overlay').addEventListener('click', function(e) {
-  if (e.target === this) {
-    closeAllModals;
-  }
-});
-
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    closeModal();
-  }
-});
-
 
 document.addEventListener('DOMContentLoaded', function() {
     const menuItems = document.querySelectorAll('.nav-menu > div');
@@ -279,3 +233,81 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', checkScroll);
     checkScroll();
 });
+
+
+function closeAllModals() {
+    document.querySelectorAll('.modal-overlay').forEach(modal => {
+    modal.classList.remove('active');
+    document.body.classList.remove('no-scroll');
+    document.documentElement.classList.remove('no-scroll');
+  });
+}
+
+
+
+
+const ANIM_DURATION = 300;
+
+function openModal(modalId) {
+  const modal = document.getElementById(modalId);
+  if (!modal) return;
+
+  if (!isMobile()){
+    const targetSection = document.getElementById('heroes');
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  document.body.classList.add('no-scroll');
+  document.documentElement.classList.add('no-scroll');
+
+  modal.classList.remove('closing');
+  modal.classList.add('active', 'opening');
+
+  clearTimeout(modal._openTimeout);
+  modal._openTimeout = setTimeout(() => {
+    modal.classList.remove('opening');
+    const focusable = modal.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    if (focusable) focusable.focus();
+  }, ANIM_DURATION);
+  
+  modal.addEventListener('click', overlayClickHandler);
+  document.addEventListener('keydown', escHandler);
+}
+
+function closeModal(modalId) {
+  const modal = document.getElementById(modalId);
+  if (!modal) return;
+
+  modal.classList.remove('opening');
+  modal.classList.add('closing');
+  modal.classList.remove('active'); 
+
+  clearTimeout(modal._closeTimeout);
+  modal._closeTimeout = setTimeout(() => {
+    modal.classList.remove('closing');
+    document.body.classList.remove('no-scroll');
+    document.documentElement.classList.remove('no-scroll');
+    modal.removeEventListener('click', overlayClickHandler);
+    document.removeEventListener('keydown', escHandler);
+  }, ANIM_DURATION);
+}
+
+function overlayClickHandler(e){
+  const overlay = e.currentTarget;
+  const content = overlay.querySelector('.modal-content');
+  if (!content) return;
+  if (!content.contains(e.target)) {
+    const id = overlay.id;
+    closeModal(id);
+  }
+}
+
+function escHandler(e){
+  if (e.key === 'Escape' || e.key === 'Esc') {
+    document.querySelectorAll('.modal-overlay.active').forEach(m => {
+      closeModal(m.id);
+    });
+  }
+}

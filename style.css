@@ -528,44 +528,78 @@ body{
 }
 
 
-.modal-overlay {
+
+:root{
+  --overlay-bg: rgba(0,0,0,0.7);
+  --overlay-blur: 7px;
+  --anim-duration: 300ms;
+  --content-max-width: 810px;
+}
+
+.modal-overlay{
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 105%;
-  background: rgba(0, 0, 0, 0.7);
+  inset: 0; 
+  background: var(--overlay-bg);
   -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(7px);
-  display: none;
+  backdrop-filter: blur(var(--overlay-blur));
+  display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+
   opacity: 0;
-  transition: opacity 0.3s ease;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--anim-duration) ease, visibility 0s linear var(--anim-duration);
 }
 
-.modal-overlay.active {
-  display: flex;
+.modal-overlay.active{
   opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity var(--anim-duration) ease;
 }
 
-.modal-content {
-  background: white;
+.modal-content{
+  background: #fff;
   padding: 20px;
-  max-width: 810px;
-  top: calc(1);
+  max-width: var(--content-max-width);
   width: 90%;
   max-height: 80vh;
   overflow-y: auto;
   position: relative;
-  transform: scale(0.9);
-  transition: transform 0.3s ease;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+
+  transform: translateY(12px) scale(0.96);
+  opacity: 0;
+  transition: transform var(--anim-duration) cubic-bezier(.2,.9,.3,1),
+              opacity var(--anim-duration) ease;
+  transform-origin: center;
 }
 
-.modal-overlay.active .modal-content {
-  transform: scale(1);
+.modal-overlay.active .modal-content{
+  transform: translateY(0) scale(1);
+  opacity: 1;
 }
+
+.modal-overlay.closing {
+  transition: opacity var(--anim-duration) ease, visibility 0s linear var(--anim-duration);
+}
+
+.close-modal-btn{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.modal-content { background-color: #fff; }
+
+.no-scroll { overflow: hidden !important; }
 
 
 @media (max-width: 600px) {
