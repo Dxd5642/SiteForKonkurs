@@ -983,6 +983,9 @@ color: #4A4A4A;
 .navi {
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: auto;
+    margin: auto;
 }
 
 .nav-menu {
@@ -995,7 +998,7 @@ color: #4A4A4A;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 161px;
+    width: auto;
     height: 44px;
 
     font-size: 24px;
@@ -1062,6 +1065,7 @@ color: #4A4A4A;
 .zvezda {
     width: 16px;
     height: 16px;
+    margin-left: 10px;
     margin-right: 10px;
     opacity: 0;
     visibility: hidden;
@@ -1223,7 +1227,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 25%;
+    width: auto;
     height: 36px;
 
     font-size: 15px;
@@ -1240,7 +1244,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 25%;
+    width: auto;
     height: 36px;
 
     font-size: 15px;
@@ -1257,7 +1261,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 25%;
+    width: auto;
     height: 36px;
 
     font-size: 15px;
@@ -1274,7 +1278,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 25%;
+    width: auto;
     height: 36px;
 
     font-size: 15px;
@@ -1294,9 +1298,15 @@ body{
     padding: 0px;
     
 }
-
+.nav_item_aboutProject, .nav_item_heroes, .nav_item_aboutWe, .nav_item_contact{
+    margin-right: 5px;
+}
+.zvezda{
+    margin-right: 5px;
+    padding-bottom: 3px;
+}
 .header {
-    position: inherit;
+    position: fixed;
 }
 #id_heroes{
     margin: 0px;
@@ -1459,10 +1469,9 @@ body{
 .footer_2_1_1_container{
 height: auto;
 width: auto;
-margin-top: auto;
+margin: auto;
 display: flex;
 flex-direction:column;
-
 }
 
 .text_footer_2_2, .text_footer_2_1, .text_footer_2_1_2{
@@ -1495,6 +1504,13 @@ flex-direction:column;
 .modal-content{
     height: auto;
     width: 90%;
+
+}
+
+
+
+.no-scroll {
+    overflow-y: hidden !important;
 }
 .modal_body{
     display: flex;
