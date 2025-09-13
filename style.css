@@ -867,6 +867,21 @@ color: #4A4A4A;
     width: 18.65%;
     display: flex;
     justify-items: center;
+    transition: all 0.5s ease;
+    
+}
+.footer_2_1_container:hover{
+height: 180px;
+width: 22.65%;
+.text_footer_2_1_1{
+    font-size: 36px;
+}
+.text_footer_2_1_2{
+    font-size: 22px;
+}
+.text_footer_2_2_1{
+    font-size: 20px;
+}
 }
 
 
@@ -897,6 +912,7 @@ color: #4A4A4A;
     letter-spacing: -0.5px;
     font-size: 24px;
     margin: 0;
+    transition: all 0.5s ease;
 }
 
 .text_footer_2_1_2 {
@@ -909,6 +925,7 @@ color: #4A4A4A;
     letter-spacing: -0.5px;
     font-size: 20px;
     margin: 0;
+    transition: all 0.5s ease;
 }
 
 .text_footer_2_2 {
@@ -925,6 +942,7 @@ color: #4A4A4A;
     letter-spacing: -0.5px;
     font-size: 18px;
     margin: 0;
+    transition: all 0.5s ease;
 }
 
 .footer_3_1 {
@@ -1083,11 +1101,6 @@ color: #4A4A4A;
 }
 
 
-
-/* Если че убрать, доп штуки странные */
-.nav-menu > div.active {
-    /* background-color: #f0f0f0; */
-}
 
 section{
     max-width: 100%;
@@ -1298,6 +1311,12 @@ body{
     padding: 0px;
     
 }
+
+.nav-menu > div.active .zvezda {
+    opacity: 1;
+    visibility: visible;
+}
+
 .nav_item_aboutProject, .nav_item_heroes, .nav_item_aboutWe, .nav_item_contact{
     margin-right: 5px;
 }
@@ -1457,15 +1476,57 @@ body{
     display: flex;
     flex-direction: column;
     height: auto;
+    transition: all 1.0s ease;
 
 }
+
+/* .footer_2_1_container:hover{
+height: auto;
+width: 90%;
+.footer_photos{
+    width: 45%;
+    height: auto;
+}
+.text_footer_2_1_1{
+    font-size: 28px;
+}
+.text_footer_2_1_2{
+    font-size: 21px;
+}
+.text_footer_2_2_1{
+    font-size: 19px;
+}
+} */
+ .footer_2_1_container:hover{
+height: auto;
+width: 90%;
+
+
+.footer_photos{
+    /* width: auto;
+    height: auto; */
+    transform: scale(1.12);
+}
+.text_footer_2_1_1{
+    font-size: 28px;
+}
+.text_footer_2_1_2{
+    font-size: 21px;
+}
+.text_footer_2_2_1{
+    font-size: 19px;
+}
+}
+
 
 .footer_2_1_container {
     width: 90%;
     height: auto;
     margin-top: 10%;
     margin-bottom: 10%;
+    transition: all 0.5s ease;
 }
+
 .footer_2_1_1_container{
 height: auto;
 width: auto;
@@ -1479,8 +1540,9 @@ flex-direction:column;
 }
 
 .footer_photos {
-    height: 150px;
-    width: 150px;
+    height: 35vw;
+    width: 35vw;
+    transition: all 0.5s ease;
 }
 
 .footer_3_1 {

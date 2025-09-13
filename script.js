@@ -131,7 +131,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
+
+   
 if(!isMobile()){//Для пк
     const observerOptions = {
                 root: null,
@@ -153,33 +154,70 @@ if(!isMobile()){//Для пк
             }
         });
     }, observerOptions);
-}
-else{//Для мобилок
-    const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const current = entry.target.getAttribute('id');
-                
-                menuItems.forEach(item => {
-                    item.classList.remove('active');
-                    if (item.getAttribute('data-target') === current) {
-                        item.classList.add('active');
-                    }
-                });
-            }
-        });
-    }, observerOptions);
-}
-
-sections.forEach(section => {
+    sections.forEach(section => {
     observer.observe(section);
 });
+}
+else{//Для мобилок
+    (() => {
+        const menuItems = document.querySelectorAll('.nav-menu > div[data-target]');
+  if (!menuItems.length) return;
+  const sections = Array.from(menuItems)
+    .map(it => document.getElementById(it.dataset.target))
+    .filter(Boolean);
+  const header = document.querySelector('.header');
+  const THRESHOLD = 0.1;
+  const getHeaderOffset = () => (header ? header.offsetHeight : 0);
+  let ticking = false;
+  function updateActive() {
+    ticking = false;
+    const vh = window.innerHeight;
+    const topViewport = getHeaderOffset(); 
+    const bottomViewport = vh;
+    let best = { id: null, ratio: 0 };
+    for (const s of sections) {
+      const rect = s.getBoundingClientRect();
+      const visibleTop = Math.max(rect.top, topViewport);
+      const visibleBottom = Math.min(rect.bottom, bottomViewport);
+      const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+      if (visibleHeight <= 0 || rect.height <= 0) continue;
+      const ratio = visibleHeight / rect.height;
+      if (ratio > best.ratio) {
+        best = { id: s.id, ratio };
+      }
+    }
+    if (best.id && best.ratio >= THRESHOLD) {
+        menuItems.forEach(mi => mi.classList.remove('active'));
+      menuItems.forEach(mi => mi.classList.toggle('active', mi.dataset.target === best.id));
+    } else {
+      menuItems.forEach(mi => mi.classList.remove('active'));
+    }
+  }
+  function onScroll() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(updateActive);
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  updateActive();
+
+  menuItems.forEach(mi => {
+    mi.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.getElementById(mi.dataset.target);
+      if (!target) return;
+      const headerOffset = getHeaderOffset();
+      const targetTop = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+      window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
+    });
+  });
+})();
+
+}
+
+
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -228,6 +266,8 @@ window.addEventListener('scroll', function() {
     const scrolled = window.pageYOffset;
     
     backgroundImg.style.transform = `translateY(${scrolled * -0.2}px)`;
+
+    
 });
 
 
